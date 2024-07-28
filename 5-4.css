@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+:root {
+    --bgc-color: #fffffe;
+    --headline-color: #094067;
+    --paragraph-color: #5f6c7b;
+    --button-color: #3da9fc;
+    --button_text-color: #fffffe;
+    --stroke-color: #094067;
+    --main-color: #F5F5F3;
+    --highlight-color: #3da9fc;
+    --secondary-color: #90b4ce;
+    --tertiary-color: #ef4565;
+  }
+
+  html,body{
+	height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+#particles-js{ 
+	position:fixed;/*描画固定*/
+	z-index:-1;/*描画を一番下に*/
+	width: 100%;
+	height: 100%;
+	background-color: var(--bgc-color);/*背景色*/
+}
+
+#wrapper{
+	position: relative;/*描画を#particles-jsよりも上にするためposition:relative;を指定*/
+	z-index: 1;/*z-indexの数字を大きくすることで描画を#particles-jsよりも上に*/
+	width:100%;
+	height: 100%;
+}

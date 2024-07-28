@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+:root {
+    --bgc-color: #fffffe;
+    --headline-color: #094067;
+    --paragraph-color: #5f6c7b;
+    --button-color: #3da9fc;
+    --button_text-color: #fffffe;
+    --stroke-color: #094067;
+    --main-color: #F5F5F3;
+    --highlight-color: #3da9fc;
+    --secondary-color: #90b4ce;
+    --tertiary-color: #ef4565;
+  }
+
+  
+
+  .gnavi2 li a{
+    text-decoration: none;
+    color: #333;
+}
+
+/*==================================================
+　5-3-11 左右から線が伸びて枠線になる
+===================================*/
+
+.gnavi2 li{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+}
+
+/*線の基点位置*/
+.gnavi2 li::before,
+.gnavi2 li::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width: 0;
+  height:1px;
+  background:var(--button-color);
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+  transition-delay: 0.2s;
+}
+
+.gnavi2 li::before{
+  right: 0;
+  top: 0;
+}
+.gnavi2 li::after{
+  left: 0;
+  bottom: 0;
+}
+
+/*線の基点位置2 spanタグ*/
+
+.gnavi2 li span{
+  display: block;
+}
+
+.gnavi2 li span::before,
+.gnavi2 li span::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width:2px;
+  height:0;
+  background: var(--button-color);
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+.gnavi2 li span::before{
+  left: 0;
+  top: 0;
+}
+.gnavi2 li span::after{
+  right: 0;
+  bottom: 0;
+}
+
+/*現在地とhoverした際の線の変化*/
+
+.gnavi2 li:hover::before,
+.gnavi2 li:hover::after{
+  width: 100%;/*横幅を100%に*/
+}
+
+.gnavi2 li:hover span::before,
+.gnavi2 li:hover span::after{
+  height: 100%;/*縦幅を100%に*/
+}
